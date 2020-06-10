@@ -4,7 +4,7 @@ const Total = props => {
   const totalAmount = props.car.price + props.additionalPrice;
   return (
     <div className="content">
-      <h4>{`Total Amount: ${totalAmount}`}</h4>
+      <h4>{`Total Amount: $${totalAmount}`}</h4>
     </div>
   );
 };

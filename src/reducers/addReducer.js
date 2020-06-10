@@ -35,7 +35,10 @@ export const addReducer = (
                 additionalPrice: state.additionalPrice + newFeature.price
             };
 
-        case REMOVE_FEATURE:
+            case REMOVE_FEATURE:
+            const removeThisFeature = state.car.features.find(feature => {
+                return feature.name === action.payload
+            })
             return {
                 ...state,
                 car: {
@@ -47,7 +50,8 @@ export const addReducer = (
                             return true
                         }
                     })
-                }
+                },
+                additionalPrice: state.additionalPrice - removeThisFeature.price
             }
         default:
             return state
